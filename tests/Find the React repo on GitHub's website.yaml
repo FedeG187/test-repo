@@ -1,0 +1,218 @@
+description: |
+  Navigate to the GitHub website, find the React repo using the
+  search functionality and go to the repo's homepage
+actors:
+  - actor: WEB
+    segments:
+      - segment: 1
+        actions:
+          - description: Navigate to the GitHub homepage
+            action: org.getopentest.selenium.NavigateTo
+            args:
+              url: https://demowebshop.tricentis.com/
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { class: ico-login }
+
+          - description: Type "opentest" in the Google search box
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: Email }
+              text: walterCapo@gmail.com
+
+          - description: Type "opentest" in the Google search box
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: Password }
+              text: Tosca1234
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "input[class='button-1 login-button']" }
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: small-searchterms }
+              text: Simple Computer    
+              sendEnter: true   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div.buttons input[value='Add to cart']" } 
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: product_attribute_75_5_31_96 }                   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: add-to-cart-button-75 }   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { linkText: Shopping cart }   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: termsofservice }   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: checkout }   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "select[name='billing_address_id']" }               
+
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { css: "select#Bbilling-address-select" }
+              optionText: New Address
+
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { id: BillingNewAddress_CountryId }
+              optionText: United States
+
+          # - description: Click the submit button
+          #   action: org.getopentest.selenium.Click
+          #   args:
+          #     locator: { id: BillingNewAddress_StateProvinceId } 
+
+          # - description: Select product 1 in the list
+          #   action: org.getopentest.selenium.SelectListOption
+          #   args:
+          #     locator: { id: BillingNewAddress_StateProvinceId }
+          #     optionText: Arizona
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: BillingNewAddress_City }
+              text: Mexico    
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: BillingNewAddress_Address1 }
+              text: Corrientes 
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: BillingNewAddress_ZipPostalCode }
+              text: 2323
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: BillingNewAddress_PhoneNumber }
+              text: 1234-5678
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div#billing-buttons-container input[value='Continue']" }
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: PickUpInStore }   
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div#shipping-buttons-container input[value='Continue']" }
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { id: paymentmethod_2 } 
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div#payment-method-buttons-container input[value='Continue']" }
+
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { id: CreditCardType }
+              optionText: Amex
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: CardholderName }
+              text: Walter Capo 
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: CardNumber }
+              text: 112233445566778899
+
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { id: ExpireMonth }
+              optionText: 04  
+
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { id: ExpireYear }
+              optionText: 2030 
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: { id: CardCode }
+              text: 1234
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div#payment-info-buttons-container input[value='Continue']" }
+
+          - description: Verify the "product" is MacBook
+            action: org.getopentest.selenium.AssertElementText
+            args:
+              locator: { css: "span.product-price order-total" }
+              textContains: 800
+              caseInsensitive: true
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div#confirm-order-buttons-container input[value='Confirm']" }
+
+          - description: Verify the "product" is MacBook
+            action: org.getopentest.selenium.AssertElementText
+            args:
+              locator: { css: "div.section order-completed" }
+              textContains: Your order has been successfully processed!
+              caseInsensitive: true
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { css: "div.buttons input[value='Continue']" }
+
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+              locator: { class: ico-logout }
