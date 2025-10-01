@@ -216,3 +216,9 @@ actors:
             action: org.getopentest.selenium.Click
             args:
               locator: { class: ico-logout }
+
+
+          # - description: Click the submit button
+          #   action: org.getopentest.selenium.Click
+          #   args:
+          #     locator: { class: ico-logout }
