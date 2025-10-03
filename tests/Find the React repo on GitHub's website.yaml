@@ -6,7 +6,7 @@ actors:
     segments:
       - segment: 1
         actions:
-          - description: Navigate to the GitHub homepage
+          - description: Navigate to the Demo Web Shop
             action: org.getopentest.selenium.NavigateTo
             args:
               url: https://demowebshop.tricentis.com/
@@ -33,14 +33,14 @@ actors:
             args:
               locator: { css: "input[class='button-1 login-button']" }
 
-          - description: Click the submit button
+          - description: Buscar computer
             action: org.getopentest.selenium.SendKeys
             args:
               locator: { id: small-searchterms }
               text: Simple Computer    
               sendEnter: true   
 
-          - description: Click the submit button
+          - description: Presionar Add to Cart
             action: org.getopentest.selenium.Click
             args:
               locator: { css: "div.buttons input[value='Add to cart']" } 
@@ -65,21 +65,26 @@ actors:
             args:
               locator: { id: termsofservice }   
 
-          - description: Click the submit button
+          - description: Click en checkout
             action: org.getopentest.selenium.Click
             args:
               locator: { id: checkout }   
 
-          - description: Click the submit button
+          - description: Abrir el select
             action: org.getopentest.selenium.Click
             args:
-              locator: { css: "select[name='billing_address_id']" }               
+              locator: { css: "select[name='billing_address_id']" }
 
-          - description: Select product 1 in the list
-            action: org.getopentest.selenium.SelectListOption
-            args:
-              locator: { css: "select#Bbilling-address-select" }
-              optionText: New Address
+          - description: Elegir NEW Address
+            action: org.getopentest.selenium.Click 
+            args: 
+              locator: { xpath: "//select[@name='billing_address_id']/option[normalize-space(.)='New Address']" }
+
+          #- description: Select product 1 in the list
+          #  action: org.getopentest.selenium.SelectListOption
+          #  args:
+          #    locator: { css: "select#Bbilling-address-select" }
+          #    optionText: New Address
 
           - description: Select product 1 in the list
             action: org.getopentest.selenium.SelectListOption
@@ -87,16 +92,16 @@ actors:
               locator: { id: BillingNewAddress_CountryId }
               optionText: United States
 
-          # - description: Click the submit button
-          #   action: org.getopentest.selenium.Click
-          #   args:
-          #     locator: { id: BillingNewAddress_StateProvinceId } 
+          - description: Click the submit button
+            action: org.getopentest.selenium.Click
+            args:
+               locator: { id: BillingNewAddress_StateProvinceId } 
 
-          # - description: Select product 1 in the list
-          #   action: org.getopentest.selenium.SelectListOption
-          #   args:
-          #     locator: { id: BillingNewAddress_StateProvinceId }
-          #     optionText: Arizona
+          - description: Select product 1 in the list
+            action: org.getopentest.selenium.SelectListOption
+            args:
+              locator: { id: BillingNewAddress_StateProvinceId }
+              optionText: Arizona
 
           - description: Click the submit button
             action: org.getopentest.selenium.SendKeys
@@ -108,24 +113,24 @@ actors:
             action: org.getopentest.selenium.SendKeys
             args:
               locator: { id: BillingNewAddress_Address1 }
-              text: Corrientes 
+             text: Corrientes 
 
-          - description: Click the submit button
-            action: org.getopentest.selenium.SendKeys
-            args:
-              locator: { id: BillingNewAddress_ZipPostalCode }
-              text: 2323
+          #- description: Click the submit button
+          #  action: org.getopentest.selenium.SendKeys
+          #  args:
+          #    locator: { id: BillingNewAddress_ZipPostalCode }
+          #    text: 2323
 
-          - description: Click the submit button
-            action: org.getopentest.selenium.SendKeys
-            args:
-              locator: { id: BillingNewAddress_PhoneNumber }
-              text: 1234-5678
+          #- description: Click the submit button
+          #  action: org.getopentest.selenium.SendKeys
+          #  args:
+          #    locator: { id: BillingNewAddress_PhoneNumber }
+          #    text: 1234-5678
 
-          - description: Click the submit button
-            action: org.getopentest.selenium.Click
-            args:
-              locator: { css: "div#billing-buttons-container input[value='Continue']" }
+          #- description: Click the submit button
+          #  action: org.getopentest.selenium.Click
+          #  args:
+          #    locator: { css: "div#billing-buttons-container input[value='Continue']" }
 
           - description: Click the submit button
             action: org.getopentest.selenium.Click
@@ -216,11 +221,7 @@ actors:
             action: org.getopentest.selenium.Click
             args:
               locator: { class: ico-logout }
-
-
           # - description: Click the submit button
           #   action: org.getopentest.selenium.Click
           #   args:
           #     locator: { class: ico-logout }
-          Fefoooooooooooooooooooooooooooooooooooooooooo me estas cagando.....
-          Fefofoofofofooffoofofo
